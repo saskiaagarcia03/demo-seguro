@@ -1,0 +1,12 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "plugin:security/recommended"],
+  "plugins": ["security"],
+  "rules": {
+    "no-eval": "error",
+    "security/detect-object-injection": "warn"
+  }
+}
