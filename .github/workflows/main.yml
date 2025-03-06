@@ -18,5 +18,4 @@ jobs:
       - name: Instalar dependencias
         run: npm install eslint eslint-plugin-security --save-dev
       - name: Correr ESLint
-        run: ls
-        #run: npx eslint index.js
+        run: npx eslint index.js
