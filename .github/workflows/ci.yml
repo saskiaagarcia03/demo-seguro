@@ -1,0 +1,22 @@
+name: CI con Escaneo de Código
+
+on:
+  push:
+    branches: [main] # Se ejecuta cada vez que haces un push a la rama main
+  pull_request:
+    branches: [main] # También en pull requests
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # Descarga el código del repositorio
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16" # Versión de Node.js
+      - name: Instalar dependencias
+        run: npm install eslint eslint-plugin-security --save-dev
+      - name: Correr ESLint
+        run: ls
+        #run: npx eslint index.js
