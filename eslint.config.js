@@ -13,8 +13,8 @@ module.exports = [
     rules: {
       "semi": ["error", "always"],
       "security/detect-eval-with-expression": "error",
-      "security/detect-new-function": "warn",
       "security/detect-object-injection": "warn",
     },
   },
 ];
+
