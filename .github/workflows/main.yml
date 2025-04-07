@@ -10,14 +10,14 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3 # Descarga el código del repositorio
-      - name: Configurar Node.js
-        uses: actions/setup-node@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: "18" # Versión de Node.js
-      - name: Instalar dependencias
-        run: npm install eslint eslint-plugin-security --save-dev
-      - name: Correr ESLint
-        run: npx eslint index.js
-
+          node-version: '18.18.0'
+      - name: Install dependencies
+        run: npm install
+      - name: Run ESLint
+        run: npx eslint .
   
