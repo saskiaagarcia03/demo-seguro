@@ -1,6 +1,3 @@
-// eslint.config.js
-const securityPlugin = require("eslint-plugin-security");
-
 module.exports = [
   {
     files: ["**/*.js"],
@@ -8,13 +5,16 @@ module.exports = [
       globals: { node: true },
     },
     plugins: {
-      security: securityPlugin,
+      security: require("eslint-plugin-security"),
     },
     rules: {
       "semi": ["error", "always"],
       "security/detect-eval-with-expression": "error",
+      "security/detect-new-function": "warn",
       "security/detect-object-injection": "warn",
+      "security/detect-non-literal-regexp": "warn", // Otra regla de seguridad adicional
     },
   },
 ];
+
 
