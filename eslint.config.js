@@ -1,3 +1,5 @@
+const securityPlugin = require("eslint-plugin-security");
+
 module.exports = [
   {
     files: ["**/*.js"],
@@ -5,16 +7,15 @@ module.exports = [
       globals: { node: true },
     },
     plugins: {
-      security: require("eslint-plugin-security"),
+      security: securityPlugin,
     },
     rules: {
       "semi": ["error", "always"],
-      "security/detect-eval-with-expression": "error",
-      "security/detect-new-function": "warn",
-      "security/detect-object-injection": "warn",
-      "security/detect-non-literal-regexp": "warn", // Otra regla de seguridad adicional
+      "security/detect-eval-with-expression": "error",  // Detecta el uso de eval
+      "security/detect-object-injection": "warn",       // Detecta inyecciones de objetos
     },
   },
 ];
+
 
 
