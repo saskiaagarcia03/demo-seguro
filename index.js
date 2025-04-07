@@ -1,5 +1,15 @@
-function saludar(nombre) {
-  console.log("Hola " + nombre); // Concatenación insegura
-  eval("alert('Hola')");         // Uso de eval, peligroso
+// index.js
+function testVulnerability() {
+  // Evaluar una expresión usando eval (vulnerabilidad)
+  eval('alert("Hello World!")');
+
+  // Uso de setTimeout con una cadena (vulnerabilidad)
+  setTimeout('console.log("This is dangerous!")', 1000);
+
+  // Uso de new Buffer() (vulnerabilidad)
+  let buffer = new Buffer('Hello');
 }
-saludar("Mundo");
+
+testVulnerability();
+
+
