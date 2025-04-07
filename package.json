@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "eslint-plugin-security": "^3.0.1"
+  },
+  "name": "demo-seguro",
+  "description": "Presentación 2 Charlas de Seguridad",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "regexp-tree": "^0.1.27",
+    "safe-regex": "^2.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
