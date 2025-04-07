@@ -1,6 +1,7 @@
-const securityPlugin = require("eslint-plugin-security");
+// eslint.config.mjs
+import securityPlugin from "eslint-plugin-security";
 
-module.exports = [
+export default [
   {
     files: ["**/*.js"],
     plugins: {
@@ -8,10 +9,11 @@ module.exports = [
     },
     rules: {
       "semi": ["error", "always"],
-      "security/detect-eval-with-expression": "error", // Marca el uso de eval()
+      "security/detect-eval-with-expression": "error",
     },
   },
 ];
+
 
 
 
