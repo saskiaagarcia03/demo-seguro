@@ -1,5 +1,5 @@
 // index.js
-// prueba1
+// prueba2
 const userInput = 'maliciousCode()';
 eval(userInput); // Detectado por security/detect-eval-with-expression
 
