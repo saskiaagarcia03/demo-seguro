@@ -1,15 +1,10 @@
 // index.js
-function testVulnerability() {
-  // Evaluar una expresión usando eval (vulnerabilidad)
-  eval("alert(\"Hello World!\")");
+const userInput = 'maliciousCode()';
+eval(userInput); // Detectado por security/detect-eval-with-expression
 
-  // Uso de setTimeout con una cadena (vulnerabilidad)
-  setTimeout("console.log(\"This is dangerous!\")", 1000);
+const regex = new RegExp('^a.*b$'); // Detectado por @rushstack/security/no-unsafe-regexp
 
-  // Uso de new Buffer() (vulnerabilidad)
-  let buffer = new Buffer("Hello");
-}
+document.write(userInput); // Detectado por no-unsanitized/method
 
-testVulnerability();
-
-
+const obj = {};
+obj[userInput] = 'value'; // Detectado por security/detect-object-injection

@@ -1,22 +1,40 @@
-import securityPlugin from 'eslint-plugin-security';
+// eslint.config.mjs
+import security from 'eslint-plugin-security';
+import noUnsanitized from 'eslint-plugin-no-unsanitized';
+import rushstackSecurity from '@rushstack/eslint-plugin-security';
 
-export default {
-  plugins: {
-    security: securityPlugin,
+export default [
+  {
+    languageOptions: {
+      ecmaVersion: 2021,
+      sourceType: 'module',
+      globals: {
+        node: true,
+        browser: true
+      }
+    },
+    plugins: {
+      security,
+      'no-unsanitized': noUnsanitized,
+      '@rushstack/security': rushstackSecurity
+    },
+    rules: {
+      // Reglas de eslint-plugin-security
+      'security/detect-object-injection': 'error',
+      'security/detect-unsafe-regex': 'error',
+      'security/detect-eval-with-expression': 'error',
+      'security/detect-non-literal-regexp': 'error',
+      // Reglas de eslint-plugin-no-unsanitized
+      'no-unsanitized/method': 'error',
+      'no-unsanitized/property': 'error',
+      // Reglas de @rushstack/eslint-plugin-security
+      '@rushstack/security/no-unsafe-regexp': 'error'
+    }
   },
-  rules: {
-    "semi": ["error", "always"],
-    "quotes": ["error", "double"],
-    "security/detect-eval-with-expression": "error",
-    "security/detect-new-buffer": "error",
-    "security/detect-non-literal-require": "error",
-    "security/detect-object-injection": "error"
-  },
-  parserOptions: {
-    ecmaVersion: 2020,  // O usa "latest" si prefieres la versión más reciente de ECMAScript
-    sourceType: "module"
-  }
-};
+  security.configs.recommended,
+  noUnsanitized.configs.recommended
+];
+
 
 
 

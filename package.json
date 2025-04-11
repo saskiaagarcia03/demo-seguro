@@ -1,6 +1,8 @@
 {
   "devDependencies": {
-    "eslint": "^9.24.0",
+    "@rushstack/eslint-plugin-security": "^0.10.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-no-unsanitized": "^4.1.2",
     "eslint-plugin-security": "^3.0.1"
   },
   "name": "demo-seguro",
